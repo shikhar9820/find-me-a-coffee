@@ -59,12 +59,10 @@ export default function CustomersPage() {
       // Aggregate by user
       const customerMap = new Map<string, CustomerData>()
 
-      stampData.forEach((stamp: {
-        user_id: string;
-        stamped_at: string;
-        users: { name: string | null; phone: string } | null
-      }) => {
+      stampData.forEach((stamp) => {
         const existing = customerMap.get(stamp.user_id)
+        // Supabase returns joined data as array or object depending on relationship
+        const userData = Array.isArray(stamp.users) ? stamp.users[0] : stamp.users
         if (existing) {
           existing.stamp_count++
           if (stamp.stamped_at > existing.last_visit) {
@@ -73,8 +71,8 @@ export default function CustomersPage() {
         } else {
           customerMap.set(stamp.user_id, {
             user_id: stamp.user_id,
-            user_name: stamp.users?.name || null,
-            user_phone: stamp.users?.phone || 'Unknown',
+            user_name: userData?.name || null,
+            user_phone: userData?.phone || 'Unknown',
             stamp_count: 1,
             last_visit: stamp.stamped_at,
           })

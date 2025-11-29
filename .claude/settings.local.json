@@ -14,7 +14,9 @@
       "Bash(git commit -m \"$(cat <<''EOF''\nInitial commit: Find Me A Coffee loyalty platform\n\n- Next.js 14 web dashboard with TypeScript and Tailwind CSS\n- Supabase integration for auth and database\n- Cafe setup wizard, dashboard, and QR code generation\n- Flutter mobile app skeleton\n- Database schema with RLS policies\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
       "Bash(git reset:*)",
       "Bash(dir:*)",
-      "Bash(findstr:*)"
+      "Bash(findstr:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []
