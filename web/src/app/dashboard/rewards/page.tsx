@@ -51,23 +51,23 @@ export default function RewardsPage() {
       .limit(50)
 
     if (redemptionData) {
-      setRedemptions(redemptionData.map((r: {
-        id: string;
-        user_id: string;
-        cafe_id: string;
-        stamps_used: number;
-        reward_description: string;
-        redemption_code: string;
-        is_claimed: boolean;
-        created_at: string;
-        claimed_at: string | null;
-        expires_at: string;
-        users: { name: string | null; phone: string } | null
-      }) => ({
-        ...r,
-        user_name: r.users?.name,
-        user_phone: r.users?.phone,
-      })))
+      setRedemptions(redemptionData.map((r) => {
+        const userData = Array.isArray(r.users) ? r.users[0] : r.users
+        return {
+          id: r.id,
+          user_id: r.user_id,
+          cafe_id: r.cafe_id,
+          stamps_used: r.stamps_used,
+          reward_description: r.reward_description,
+          redemption_code: r.redemption_code,
+          is_claimed: r.is_claimed,
+          created_at: r.created_at,
+          claimed_at: r.claimed_at,
+          expires_at: r.expires_at,
+          user_name: userData?.name || undefined,
+          user_phone: userData?.phone || undefined,
+        }
+      }))
     }
 
     setLoading(false)
