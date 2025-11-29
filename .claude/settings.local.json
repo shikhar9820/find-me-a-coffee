@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(flutter:*)",
+      "Bash(where:*)",
+      "Bash(node:*)",
+      "Bash(npm:*)",
+      "Bash(npx create-next-app@latest:*)",
+      "Bash(npx create-next-app@14:*)",
+      "Bash(winget install:*)",
+      "Bash(git -C \"C:\\Users\\Imart\\find-me-a-coffee\\web\" log --oneline -10)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nInitial commit: Find Me A Coffee loyalty platform\n\n- Next.js 14 web dashboard with TypeScript and Tailwind CSS\n- Supabase integration for auth and database\n- Cafe setup wizard, dashboard, and QR code generation\n- Flutter mobile app skeleton\n- Database schema with RLS policies\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git reset:*)",
+      "Bash(dir:*)",
+      "Bash(findstr:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
